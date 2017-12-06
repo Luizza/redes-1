@@ -1,0 +1,7 @@
+1- A) O melhor caminho é do nó 1 ao nó 3, depois nó 4, nó 5 e por último nó 6.
+B) Sim, pois do nó 1 ao nó 6 o caminho utilizado foi o melhor, passando pelo nó 4.
+C) Não, pois quando o nó muda a referência também muda.
+
+2- Do nó 1 ao nó 2, nó 3, nó 4 e nó 8.
+
+
