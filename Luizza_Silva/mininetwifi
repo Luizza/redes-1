@@ -1,0 +1,75 @@
+1.1)
+O artigo mais interessante, em minha opinião é o “Mininet-WiFi:
+Emulating software-defined wireless networks”(Ramon R. Fontes,
+Samira Afzal, Samuel H. B. Brito, Mateus A. S. Santos e Christian
+Esteve Rothenberg). Tal artigo é extremamente explicativo em
+relação as funcionalidades do Mininet-Wifi, o porquê da criação do
+Mininet-Wifi, entre outras informações pertinentes e principalmente
+esclarecedoras.
+2.1)
+No primeiro ping STA1 ping STA2, antes de desconectar STA1,
+não houve perda de pacotes e o tempo do processo foi de
+13300ms. No segundo ping, depois da reconexão de STA1, não
+houve perda de pacotes, e o tempo foi menor, 11270ms.
+2.2)
+comando iperf: STA1- 10.5 Mbits/sec e STA2- 10.6 Mbits/sec.
+2.3)
+TxPower, potência transmitida pelo modem: 14; a wlan,
+componentes da lan: sta1-wlan0; ip, protocolo de rede local da
+sta1: 10.0.0.1/8; range, alcance da rede: 15; mac, interface de
+comunicação: 02:00:00:00:00:00; frequency: 2.412Hz; mode,
+modelo ou geração de rede: g; position: 1.0,0.0,0.0.
+3.1)
+O nó STA3 está incomunicável, isso ocorreu pois ele está fora do
+alcance da rede. O sinal não está completamente dentro do
+alcance. Ele está associado ao AP1, mas ainda sim n é possível
+haver comunicação.
+3.2)
+Modelo: “Log-Normal Shadowing Propagation Loss Model”. O nível
+de sinal do primeiro teste foi de -62dBm, após a mudança do
+modelo, o nível de sinal do STA1 foi para -71dBm. O nível do sinal
+cai modelo apresenta uma fisionomia mais realista, com alterações
+de sinal e consequentemente com o alcance.
+3.3)
+Por ser mais parecido com o real, e por ter mudanças de nível de
+sinal, o modelo Log-Normal pode ser utilizado em qualquer
+ambiente.
+4.1)
+O Iperf de STA1 (-32dBm) e STA3(-37dBm) apresentaram 18
+Mbits/sec, e largura 0. A distância entre eles é 50m.
+4.2)
+O Clear Channel Assessmentt é um mecanismo de sensor da
+WLAN. É definido pelo protocolo IEEE 802.11. Existem duas CCA,
+a primeira é a CCA-CS tem por função detectar e fazer
+decodificação de um WiFi recente e a CCA-ED, que tem como
+função detectar energias elevadas no canal operacional e parar a
+transmissão como medida de segurança.
+5.1)
+A comunicação entre STA1 e STA2 foi interrompida, o STA1 é um
+nó móvel que ao se aproximar da AP2 saiu da área de alcance da
+AP1, logo não há como estabelecer comunicação entre STA1 e
+STA2 devidos ao fato de não estarem na mesma área de rede.
+5.2)
+O que ocorreu com STA1 foi um handover, ele funciona como uma
+estação móvel onde os nós também são móveis. Ocorre a
+combinação de dados de uma célula para outra com setores
+diferentes para que tenha boa qualidade.
+6.1)
+O ponto de STA1 está fora da área de alcance de STA2 e STA3, e
+isso impossibilita a comunicação entre STA1 e STA3. STA2 e
+STA3 conseguem estabelecer comunicação.
+6.2)
+Para ocorrer a comunicação entre STA4 e STA6, é necessário
+mudar a posição de STA4
+e STA6 para “sta4 = net.addStation('sta4', position='35,140,0')” e
+“sta6 = net.addStation('sta6', position='80,140,0')”. Dessa forma, os
+dados passaram para STA5 e só então passará para STA6. Para
+transferir os dados diretamente para STA6, a posição x ficaria “sta4
+= net.addStation('sta4',a position='55,140,0')” e “sta6 =
+net.addStation('sta6', position='65,140,0')”.
+6.3)
+Utilizaria em experimentos mais realistas, assim como o modelo
+Log-Normal Shadowing Propagation Loss Model. O modelo 3D é o
+ideal para a resolução do problema de transferência de dados se
+ele estiver sendo causado pela distância, pois possibilita uma
+visualização mais ampla do problema, logo melhor resolução
